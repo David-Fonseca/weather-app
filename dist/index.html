@@ -8,9 +8,52 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-    <form>
-        <input type="text" id="location">
-        <button id="search-location">search</button>
-    </form>
+    <div class="top-half">
+        <div id="general-info" class="top-left">
+            <div id="state"></div>
+            <div id="location"></div>
+            <div id="time"></div>
+            <div id="temperature"></div>
+            
+            <form>
+                <input type="text" id="location-input">
+                <button id="search-location">search</button>
+            </form>
+        </div>
+        <div id="specific-info" class="top-right">
+            <div id="feels-like">
+                <img src="#" id="feels-like-icon">
+                <div>
+                    <div>Feels Like</div>
+                    <div id="feels-like-value"></div>
+                </div>
+            </div>
+            <div id="humidity">
+                <img src="#" id="humidity-icon">
+                <div>
+                    <div>humidity</div>
+                    <div id="humidity-value"></div>
+                </div>
+            </div>
+            <div id="chance-of-rain">
+                <img src="#" id="chance-of-rain-icon">
+                <div>
+                    <div>chance of Rain</div>
+                    <div id="chance-of-rain-value"></div>
+                </div>
+            </div>
+            <div id="wind-speed">
+                <img src="#" id="wind-speed-icon">
+                <div>
+                    <div>Wind Speed</div>
+                    <div id="wind-speed-value"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-half">
+        <div id="carousel"></div>
+    </div>
+
 </body>
 </html>

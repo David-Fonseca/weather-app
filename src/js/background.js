@@ -1,14 +1,15 @@
 async function getBackground(prompt){
+    const body = document.querySelector('body');
     try{    
-        const weatherPrompt = `${prompt} weather`;
+        const weatherPrompt = `${prompt} weather wallpaper`;
         
         const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=LKSy1VlRQZ7F6EgdseTiSEMQvtJ6ouYb&s=${weatherPrompt}`,{mode:'cors'})
 
         const imgData = await response.json();
-        const body = document.querySelector('body');
-        console.log(imgData.data.images.original.url)
-        body.style.backgroundImage = imgData.data.images.original.url;
-        return 'success';
+        body.style.backgroundImage=`url('${imgData.data.images.original.url}')`;
+
+        
+        return imgData;
     }
     catch(error){
         console.log(error);

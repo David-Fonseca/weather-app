@@ -1,4 +1,4 @@
 
-const getLocation = () => document.querySelector('#location').value;
+const getLocation = () => document.querySelector('#location-input').value;
 
 export default getLocation;

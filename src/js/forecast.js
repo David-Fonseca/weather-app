@@ -1,6 +1,6 @@
 const getForecastJson = async (location) =>new Promise((resolve, reject)=>{    
     const api = `https://api.weatherapi.com/v1/forecast.json?key=7ba2e9ca5941458abf8185444232306&q=${location}&days=14`;
-    console.log(api);
+
     fetch(api,{mode:'cors'})
         .then((response) =>response.json())
         .then((response) =>{
