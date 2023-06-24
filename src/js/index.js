@@ -1,7 +1,7 @@
 import '../style.css';
 import humidityIcon from '../icons/humidity.png'
 import rainIcon from '../icons/rain.png'
-import stormIcon from '../icons/storm.png'
+
 import thermoIcon from '../icons/thermostat.png'
 import windIcon from '../icons/wind.png'
 import getWeatherJson from './api';
@@ -23,7 +23,7 @@ document.querySelector('#search-location').addEventListener('click',(event)=>{
     .then(values => {
 
         getBackground(values[0].current.condition.text);
-       // setGeneralInfo(values[0]);
+        setGeneralInfo(values[0]);
         setSpecificInfo(values[1]);
 
     })
