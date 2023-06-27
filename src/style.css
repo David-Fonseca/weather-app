@@ -47,9 +47,25 @@ body{
     text-align: center;
 }
 input{
-    
+    background-color: transparent;
+    border:none;
+    color: white;
+    /* border-bottom:2px solid white; */
+}
+input:focus, input:active{
+    background-color: transparent;
+}
+form{
+    border-bottom: 2px solid white;
+}
+#choice-block{
+    display: flex;
+    justify-content: center;
+    gap:1vw;
 }
 button{
-    
+    margin:0;
+    background-color: transparent;
+    border: none;
 }
 

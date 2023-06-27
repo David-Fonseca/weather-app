@@ -11,6 +11,8 @@ import getBackground from './background';
 import { setGeneralInfo, setSpecificInfo, setForecast } from './domManipulation';
 
 
+let unitFlag = 'C';
+
 document.querySelector('#feels-like-icon').src = thermoIcon;
 document.querySelector('#humidity-icon').src = humidityIcon;
 document.querySelector('#chance-of-rain-icon').src = rainIcon;
@@ -23,9 +25,9 @@ document.querySelector('#search-location').addEventListener('click',(event)=>{
     .then(values => {
 
         getBackground(values[0].current.condition.text);
-        setGeneralInfo(values[0]);
-        setSpecificInfo(values[1]);
-        setForecast(values[1]);
+        setGeneralInfo(values[0], unitFlag);
+        setSpecificInfo(values[1], unitFlag);
+        setForecast(values[1], unitFlag);
 
     })
 })
@@ -38,4 +40,17 @@ Promise.all([getWeatherJson('london'), getForecastJson('london')])
     setSpecificInfo(values[1]);
     setForecast(values[1]);
 
+})
+
+document.querySelector('#F').addEventListener('click',()=>{
+    if(unitFlag !== 'F'){
+        unitFlag='F';
+
+    }
+})
+
+document.querySelector('#C').addEventListener('click',()=>{
+    if(unitFlag!=='C'){
+        unitFlag='C';
+    }
 })
