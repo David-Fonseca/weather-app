@@ -8,7 +8,7 @@ import getWeatherJson from './api';
 import getLocation from './location';
 import getForecastJson from './forecast';
 import getBackground from './background';
-import { setGeneralInfo, setSpecificInfo } from './domManipulation';
+import { setGeneralInfo, setSpecificInfo, setForecast } from './domManipulation';
 
 
 document.querySelector('#feels-like-icon').src = thermoIcon;
@@ -25,6 +25,17 @@ document.querySelector('#search-location').addEventListener('click',(event)=>{
         getBackground(values[0].current.condition.text);
         setGeneralInfo(values[0]);
         setSpecificInfo(values[1]);
+        setForecast(values[1]);
 
     })
+})
+
+Promise.all([getWeatherJson('london'), getForecastJson('london')])
+.then(values => {
+
+    getBackground(values[0].current.condition.text);
+    setGeneralInfo(values[0]);
+    setSpecificInfo(values[1]);
+    setForecast(values[1]);
+
 })

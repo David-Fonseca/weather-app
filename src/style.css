@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    color:white;
 }
 body{
     width: 100vw;
@@ -33,6 +34,17 @@ body{
 .top-right div img{
     height: 4vh;
     width: auto;
+}
+#current-icon{
+    height:30vw;
+    width:30vw;
+}
+#forecast{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 input{
     
